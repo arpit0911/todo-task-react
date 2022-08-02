@@ -2,6 +2,7 @@ import "./App.css";
 import TodoList from "./components/TodoList";
 import AddTask from "./components/AddTask";
 import { useEffect, useState } from "react";
+import { Container, Card } from "reactstrap";
 function App() {
   const [todos, setTodo] = useState([]);
   //**** adding new task to the list
@@ -28,11 +29,10 @@ function App() {
     }
   }, []);
   return (
-    <>
-      {/* <div>{console.log(todos)}</div> */}
+    <div className="App">
       <AddTask addTodo={addTodo} />
       <TodoList todos={todos} deleteTodo={deleteTodo} />
-    </>
+    </div>
   );
 }
 

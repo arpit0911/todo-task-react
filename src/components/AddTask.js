@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import { Button, Input, Form } from "reactstrap";
 
 const AddTask = ({ addTodo }) => {
   const [task, setTask] = useState("");
@@ -21,15 +22,17 @@ const AddTask = ({ addTodo }) => {
   };
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <input
+      <Form onSubmit={handleSubmit}>
+        <Input
           placeholder="Enter you task"
           type="text"
           value={task}
           onChange={(event) => setTask(event.target.value)}
         />
-        <button type="submit">Add Task</button>
-      </form>
+        <Button className="mt-2" color="primary" type="submit">
+          Add Task
+        </Button>
+      </Form>
     </>
   );
 };
